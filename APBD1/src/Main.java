@@ -16,15 +16,18 @@ public class Main {
             Scanner s = new Scanner(System.in);
             int operation = s.nextInt();
 
+            System.out.print("Please enter the first number: ");
+            int firstNumber = s.nextInt();
+            System.out.print("Please enter the second number: ");
+            int secondNumber = s.nextInt();
+
             switch(operation){
-                case 1 -> System.out.println("add");
-                case 2 -> System.out.println("subtract");
-                case 3 -> System.out.println("multiply");
-                case 4 -> System.out.println("divide");
+                case 1 -> System.out.println(firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
+                case 2 -> System.out.println(firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
+                case 3 -> System.out.println(firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
+                case 4 -> System.out.println(firstNumber + " / " + secondNumber + " = " + (firstNumber / secondNumber));
                 case 5 -> System.exit(0);
             }
-
-
         }
     }
 }
