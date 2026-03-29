@@ -19,6 +19,13 @@ public class Main {
             Scanner s = new Scanner(System.in);
             int operation = s.nextInt();
 
+            if (archive[archive.length-1] != null){
+                String[] tmp = new  String[archive.length + 10];
+                for (int i = 0; i < archive.length; i++){
+                    tmp[i] = archive[i];
+                }
+                archive = tmp;
+            }
 
 
             switch(operation){
