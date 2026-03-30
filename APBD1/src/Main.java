@@ -22,11 +22,11 @@ public class Main {
             int operation = s.nextInt();
 
             if (archive[archive.length-1] != null){
-                String[] tmp = new  String[archive.length + 10];
+                String[] tmp_archive = new  String[archive.length + 10];
                 for (int i = 0; i < archive.length; i++){
-                    tmp[i] = archive[i];
+                    tmp_archive[i] = archive[i];
                 }
-                archive = tmp;
+                archive = tmp_archive;
             }
 
 
