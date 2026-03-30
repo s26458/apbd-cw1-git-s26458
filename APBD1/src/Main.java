@@ -139,7 +139,25 @@ public class Main {
     }
 
     private static void min(String[] archive){
-        
+        String[] data_tab = get_tab_input();
+        double min = 0;
+        String data = "MIN FROM (";
+        for (int i = 0; i<data_tab.length; i++){
+            String tmpS = data_tab[i];
+            Double tmpD = Double.parseDouble(tmpS);
+            data = data + tmpS;
+            if(tmpD < min){
+                min = tmpD;
+            }
+            if(i < data_tab.length-1){
+                data = data + " , ";
+            }
+            else {
+                data = data + " ) IS ";
+            }
+        }
+        data = data + min;
+        print_and_save(data, archive);
     }
 
     private static void print_and_save(String data, String[] archive){
