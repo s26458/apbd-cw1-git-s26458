@@ -34,13 +34,7 @@ public class Main {
                 case 2 -> substract(archive);
                 case 3 -> multiply(archive);
                 case 4 -> divide(archive);
-                case 5 -> {
-                    for (String data : archive) {
-                        if (data != null) {
-                            System.out.println(data);
-                        }
-                    }
-                }
+                case 5 -> print_archive(archive);
                 case 6 -> average(archive);
                 case 0 -> System.exit(0);
                 default -> System.out.println("Invalid input");
@@ -115,6 +109,13 @@ public class Main {
             if (archive[i] == null){
                 archive[i] = data;
                 break;
+            }
+        }
+    }
+    private static void print_archive(String[] archive){
+        for (String data : archive){
+            if (data != null){
+                System.out.println(data);
             }
         }
     }
