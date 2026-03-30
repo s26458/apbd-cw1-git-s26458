@@ -41,15 +41,13 @@ public class Main {
                         }
                     }
                 }
+                case 6 -> average(archive);
                 case 0 -> System.exit(0);
                 default -> System.out.println("Invalid input");
             }
 
 
         }
-    }
-
-    private static void substract(String[] archive) {
     }
 
     private static void add(String[] archive){
@@ -61,7 +59,7 @@ public class Main {
         String data = (firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
         print_and_save(data, archive);
     }
-    private void subtract(String [] archive){
+    private static void substract(String [] archive){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter the first number: ");
         int firstNumber = s.nextInt();
@@ -89,11 +87,31 @@ public class Main {
         print_and_save(data, archive);
     }
     private static void average(String[] archive){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Please enter multiple numbers separated by spaces: ");
+        String userEntry = s.nextLine();
+        String[] data_tab = userEntry.split(" ");
+        String data = "(";
+        int sum = 0;
+        for (int i = 0; i<data_tab.length; i++){
+            String tmpS = data_tab[i];
+            Double tmpD = Double.parseDouble(tmpS);
+            sum += tmpD;
+            data = data + tmpS;
+            if(i < data_tab.length-1){
+                data = data + " + ";
+            }
+            else {
+                data = data + " ) / " + data_tab.length + " = ";
+            }
+        }
+        sum = sum / data_tab.length;
+        data = data + sum;
+        print_and_save(data, archive);
     }
     private static void print_and_save(String data, String[] archive){
         System.out.println(data);
         for (int i = 0; i < archive.length; i++){
-            System.out.println(archive[i]);
             if (archive[i] == null){
                 archive[i] = data;
                 break;
