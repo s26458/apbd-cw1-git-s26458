@@ -15,6 +15,7 @@ public class Main {
             System.out.println(" 4. DIVIDE");
             System.out.println(" 5. HISTORY");
             System.out.println(" 6. CALCULATE AVERAGE");
+            System.out.println(" 7. CALCULATE MAX");
             System.out.println(" 0. EXIT");
 
             Scanner s = new Scanner(System.in);
@@ -36,6 +37,7 @@ public class Main {
                 case 4 -> divide(archive);
                 case 5 -> print_archive(archive);
                 case 6 -> average(archive);
+                case 7 -> max(archive);
                 case 0 -> System.exit(0);
                 default -> System.out.println("Invalid input");
             }
@@ -43,7 +45,13 @@ public class Main {
 
         }
     }
-
+    private static String[] get_tab_input(){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Please enter multiple numbers separated by spaces: ");
+        String userEntry = s.nextLine();
+        String[] tab = userEntry.split(" ");
+        return tab;
+    }
     private static void add(String[] archive){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter the first number: ");
@@ -81,10 +89,7 @@ public class Main {
         print_and_save(data, archive);
     }
     private static void average(String[] archive){
-        Scanner s = new Scanner(System.in);
-        System.out.print("Please enter multiple numbers separated by spaces: ");
-        String userEntry = s.nextLine();
-        String[] data_tab = userEntry.split(" ");
+        String[] data_tab = get_tab_input();
         String data = "(";
         int sum = 0;
         for (int i = 0; i<data_tab.length; i++){
@@ -101,6 +106,28 @@ public class Main {
         }
         sum = sum / data_tab.length;
         data = data + sum;
+        print_and_save(data, archive);
+    }
+
+    private static void max(String[] archive){
+        String[] data_tab = get_tab_input();
+        double max = 0;
+        String data = "MAX FROM (";
+        for (int i = 0; i<data_tab.length; i++){
+            String tmpS = data_tab[i];
+            Double tmpD = Double.parseDouble(tmpS);
+            data = data + tmpS;
+            if(tmpD > max){
+            max = tmpD;
+            }
+            if(i < data_tab.length-1){
+                data = data + " , ";
+            }
+            else {
+                data = data + " ) IS ";
+            }
+        }
+        data = data + max;
         print_and_save(data, archive);
     }
     private static void print_and_save(String data, String[] archive){
