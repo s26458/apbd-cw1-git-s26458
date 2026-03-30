@@ -22,11 +22,19 @@ public class Main {
             int operation = s.nextInt();
 
             if (archive[archive.length-1] != null){
+<<<<<<< HEAD
                 String[] tmp_archive = new  String[archive.length + 10];
                 for (int i = 0; i < archive.length; i++){
                     tmp_archive[i] = archive[i];
                 }
                 archive = tmp_archive;
+=======
+                String[] tmp_tab = new  String[archive.length + 10];
+                for (int i = 0; i < archive.length; i++){
+                    tmp_tab[i] = archive[i];
+                }
+                archive = tmp_tab;
+>>>>>>> feature-conflict
             }
 
 
