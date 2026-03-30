@@ -5,7 +5,7 @@ public class Main {
 
         String[] archive = new String[10];
 
-        System.out.println("==== welcome to console calculator ====");
+        System.out.println("===== welcome to console calculator =====");
 
         while(true){
             System.out.println(" --- choose option ---");
