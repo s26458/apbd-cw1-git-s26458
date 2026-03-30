@@ -14,7 +14,8 @@ public class Main {
             System.out.println(" 3. MULTIPLY");
             System.out.println(" 4. DIVIDE");
             System.out.println(" 5. HISTORY");
-            System.out.println(" 6. EXIT");
+            System.out.println(" 6. CALCULATE AVERAGE");
+            System.out.println(" 0. EXIT");
 
             Scanner s = new Scanner(System.in);
             int operation = s.nextInt();
@@ -40,7 +41,7 @@ public class Main {
                         }
                     }
                 }
-                case 6 -> System.exit(0);
+                case 0 -> System.exit(0);
                 default -> System.out.println("Invalid input");
             }
 
@@ -86,6 +87,8 @@ public class Main {
         int secondNumber = s.nextInt();
         String data = (firstNumber + " / " + secondNumber + " = " + (firstNumber / secondNumber));
         print_and_save(data, archive);
+    }
+    private static void average(String[] archive){
     }
     private static void print_and_save(String data, String[] archive){
         System.out.println(data);
