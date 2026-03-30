@@ -38,6 +38,7 @@ public class Main {
                 case 5 -> print_archive(archive);
                 case 6 -> average(archive);
                 case 7 -> max(archive);
+                case 8 -> min(archive);
                 case 0 -> System.exit(0);
                 default -> System.out.println("Invalid input");
             }
@@ -45,6 +46,7 @@ public class Main {
 
         }
     }
+
     private static String[] get_tab_input(){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter multiple numbers separated by spaces: ");
@@ -52,6 +54,7 @@ public class Main {
         String[] tab = userEntry.split(" ");
         return tab;
     }
+
     private static void add(String[] archive){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter the first number: ");
@@ -61,6 +64,7 @@ public class Main {
         String data = (firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
         print_and_save(data, archive);
     }
+
     private static void substract(String [] archive){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter the first number: ");
@@ -70,6 +74,7 @@ public class Main {
         String data = (firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
         print_and_save(data, archive);
     }
+
     private static void multiply(String[] archive){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter the first number: ");
@@ -79,6 +84,7 @@ public class Main {
         String data = (firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
         print_and_save(data, archive);
     }
+
     private static void divide(String[] archive){
         Scanner s = new Scanner(System.in);
         System.out.print("Please enter the first number: ");
@@ -88,6 +94,7 @@ public class Main {
         String data = (firstNumber + " / " + secondNumber + " = " + (firstNumber / secondNumber));
         print_and_save(data, archive);
     }
+
     private static void average(String[] archive){
         String[] data_tab = get_tab_input();
         String data = "(";
@@ -130,6 +137,11 @@ public class Main {
         data = data + max;
         print_and_save(data, archive);
     }
+
+    private static void min(String[] archive){
+        
+    }
+
     private static void print_and_save(String data, String[] archive){
         System.out.println(data);
         for (int i = 0; i < archive.length; i++){
@@ -139,6 +151,7 @@ public class Main {
             }
         }
     }
+
     private static void print_archive(String[] archive){
         for (String data : archive){
             if (data != null){
